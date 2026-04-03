@@ -12,7 +12,7 @@ class Mover(Node):
 
     def _tick(self):
         msg = Twist()
-        msg.linear.x = 0.2
+        msg.linear.x = 0.01
         self.pub.publish(msg)
 
 
