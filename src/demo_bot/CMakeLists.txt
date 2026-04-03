@@ -13,7 +13,10 @@ install(PROGRAMS scripts/mover.py
 
 if(BUILD_TESTING)
   find_package(ament_cmake_ros REQUIRED)
+  find_package(ament_cmake_gtest REQUIRED)
   find_package(launch_testing_ament_cmake REQUIRED)
+
+  ament_add_gtest(test_velocity_math test/test_velocity_math.cpp)
 
   function(add_ros_isolated_launch_test path)
     set(RUNNER "${ament_cmake_ros_DIR}/run_test_isolated.py")
